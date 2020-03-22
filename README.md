@@ -1,2 +1,2 @@
 # grimsdotdev
-My site
+My personal webpage.
