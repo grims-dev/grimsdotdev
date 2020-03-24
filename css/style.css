@@ -87,10 +87,6 @@ ul li:not(:last-child) {
 
 a {
   color: #5b5bb3;
-  text-decoration-style: dashed;
-}
-a:hover {
-  text-decoration-style: wavy;
 }
 
 .btn {
