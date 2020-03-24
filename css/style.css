@@ -31,11 +31,6 @@ header {
   text-align: center;
   color: #f7f7f7;
 }
-.container {
-  max-width: 1050px;
-  margin: auto;
-  padding: 0 15px;
-}
 
 .content {
   background: rgba(252,252,252,0.95);
@@ -43,7 +38,7 @@ header {
   padding: 25px 20px;
   margin: 50px auto 100px;
   box-shadow: 0 3px 5px rgba(0,0,0,0.2);
-  max-width: 700px;
+  max-width: 750px;
 }
 
 .content p:first-child {
