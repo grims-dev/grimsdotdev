@@ -1,6 +1,6 @@
 // background animation functionality
 
-// only run if user doesn't have motion settings
+// only run if user doesn't prefer reduced motion
 const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 if (prefersReducedMotion === false || prefersReducedMotion === undefined) {
     let bg = document.querySelector('.background');
