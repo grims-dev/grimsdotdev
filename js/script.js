@@ -1,32 +1,31 @@
 // background animation functionality
 
 // only run if user doesn't prefer reduced motion
-const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-if (prefersReducedMotion === false || prefersReducedMotion === undefined) {
-    let bg = document.querySelector('.background');
+const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches || false;
+if (prefersReducedMotion === false) {
+  const bg = document.querySelector('.background');
 
-    let scaleMove = 2.5;
-    let scaleMoveHalf = scaleMove / 2;
-    let scaleRotate = 4;
-    let scaleRotateHalf = scaleRotate / 2;
+  const scaleMove = 2;
+  const scaleMoveHalf = scaleMove / 2;
+  const scaleRotate = 3;
+  const scaleRotateHalf = scaleRotate / 2;
 
-    window.addEventListener('mousemove', e => {
-        let x = 1 - e.clientX / window.innerWidth;
-        let y = 1 - e.clientY / window.innerHeight;
+  window.addEventListener('mousemove', (e) => {
+    const x = 1 - (e.clientX / window.innerWidth);
+    const y = 1 - (e.clientY / window.innerHeight);
 
-        let xMove = (x * scaleMove) - scaleMoveHalf;
-        let yMove = (y * scaleMove) - scaleMoveHalf;
+    const xMove = (x * scaleMove) - scaleMoveHalf;
+    const yMove = (y * scaleMove) - scaleMoveHalf;
+    const xRotate = (x * scaleRotate) - scaleRotateHalf;
+    const yRotate = (y * scaleRotate) - scaleRotateHalf;
 
-        let xRotate = (x * scaleRotate) - scaleRotateHalf;
-        let yRotate = (y * scaleRotate) - scaleRotateHalf;
-
-        window.requestAnimationFrame(function() {
-            bg.style.transform = `
-            translateX(${xMove}em)
-            translateY(${yMove}em)
-            rotateX(${xRotate}deg)
-            rotateY(${yRotate}deg)
-        `;
-        });
+    window.requestAnimationFrame(() => {
+      bg.style.transform = `
+        translateX(${xMove}em)
+        translateY(${yMove}em)
+        rotateX(${xRotate}deg)
+        rotateY(${yRotate}deg)
+      `;
     });
+  });
 }
