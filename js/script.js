@@ -5,9 +5,9 @@ const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)
 if (prefersReducedMotion === false) {
   const bg = document.querySelector('.background');
 
-  const scaleMove = 2;
+  const scaleMove = 0.5;
   const scaleMoveHalf = scaleMove / 2;
-  const scaleRotate = 3;
+  const scaleRotate = 0.75;
   const scaleRotateHalf = scaleRotate / 2;
 
   window.addEventListener('mousemove', (e) => {
